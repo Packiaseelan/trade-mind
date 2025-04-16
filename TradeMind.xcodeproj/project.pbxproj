@@ -1,0 +1,646 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E415190A2DAF590D007D3071 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = E41519092DAF590D007D3071 /* Core */; };
+		E415190C2DAF5912007D3071 /* NavigationManager in Frameworks */ = {isa = PBXBuildFile; productRef = E415190B2DAF5912007D3071 /* NavigationManager */; };
+		E415190E2DAF5916007D3071 /* NetworkManager in Frameworks */ = {isa = PBXBuildFile; productRef = E415190D2DAF5916007D3071 /* NetworkManager */; };
+		E48B7A4D2DAF6AB600EDDFEC /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = E48B7A4C2DAF6AB600EDDFEC /* Shared */; };
+		E48B7A822DAF6E1300EDDFEC /* Authentication in Frameworks */ = {isa = PBXBuildFile; productRef = E48B7A812DAF6E1300EDDFEC /* Authentication */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E41518B12DAF56D3007D3071 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E41518962DAF56D1007D3071 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E415189D2DAF56D1007D3071;
+			remoteInfo = TradeMind;
+		};
+		E41518BB2DAF56D3007D3071 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E41518962DAF56D1007D3071 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E415189D2DAF56D1007D3071;
+			remoteInfo = TradeMind;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E415189E2DAF56D1007D3071 /* TradeMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradeMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E41518B02DAF56D3007D3071 /* TradeMindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TradeMindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E41518BA2DAF56D3007D3071 /* TradeMindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TradeMindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E48B7A4A2DAF6A9E00EDDFEC /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Shared; sourceTree = "<group>"; };
+		E48B7A802DAF6E0000EDDFEC /* Authentication */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Authentication; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E41518D62DAF5868007D3071 /* Exceptions for "Neu" folder in "TradeMindUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Core,
+				NavigationManager,
+				NetworkManager,
+			);
+			target = E41518B92DAF56D3007D3071 /* TradeMindUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		E41518A02DAF56D1007D3071 /* TradeMind */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TradeMind;
+			sourceTree = "<group>";
+		};
+		E41518B32DAF56D3007D3071 /* TradeMindTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TradeMindTests;
+			sourceTree = "<group>";
+		};
+		E41518BD2DAF56D3007D3071 /* TradeMindUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TradeMindUITests;
+			sourceTree = "<group>";
+		};
+		E41518D52DAF5868007D3071 /* Neu */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E41518D62DAF5868007D3071 /* Exceptions for "Neu" folder in "TradeMindUITests" target */,
+			);
+			path = Neu;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E415189B2DAF56D1007D3071 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E415190C2DAF5912007D3071 /* NavigationManager in Frameworks */,
+				E48B7A4D2DAF6AB600EDDFEC /* Shared in Frameworks */,
+				E48B7A822DAF6E1300EDDFEC /* Authentication in Frameworks */,
+				E415190A2DAF590D007D3071 /* Core in Frameworks */,
+				E415190E2DAF5916007D3071 /* NetworkManager in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E41518AD2DAF56D3007D3071 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E41518B72DAF56D3007D3071 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E41518952DAF56D1007D3071 = {
+			isa = PBXGroup;
+			children = (
+				E48B7A4B2DAF6A9E00EDDFEC /* Features */,
+				E41518D52DAF5868007D3071 /* Neu */,
+				E41518A02DAF56D1007D3071 /* TradeMind */,
+				E41518B32DAF56D3007D3071 /* TradeMindTests */,
+				E41518BD2DAF56D3007D3071 /* TradeMindUITests */,
+				E41519082DAF590D007D3071 /* Frameworks */,
+				E415189F2DAF56D1007D3071 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E415189F2DAF56D1007D3071 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E415189E2DAF56D1007D3071 /* TradeMind.app */,
+				E41518B02DAF56D3007D3071 /* TradeMindTests.xctest */,
+				E41518BA2DAF56D3007D3071 /* TradeMindUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E41519082DAF590D007D3071 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E48B7A4B2DAF6A9E00EDDFEC /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				E48B7A802DAF6E0000EDDFEC /* Authentication */,
+				E48B7A4A2DAF6A9E00EDDFEC /* Shared */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E415189D2DAF56D1007D3071 /* TradeMind */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E41518C42DAF56D4007D3071 /* Build configuration list for PBXNativeTarget "TradeMind" */;
+			buildPhases = (
+				E415189A2DAF56D1007D3071 /* Sources */,
+				E415189B2DAF56D1007D3071 /* Frameworks */,
+				E415189C2DAF56D1007D3071 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E41518A02DAF56D1007D3071 /* TradeMind */,
+			);
+			name = TradeMind;
+			packageProductDependencies = (
+				E41519092DAF590D007D3071 /* Core */,
+				E415190B2DAF5912007D3071 /* NavigationManager */,
+				E415190D2DAF5916007D3071 /* NetworkManager */,
+				E48B7A4C2DAF6AB600EDDFEC /* Shared */,
+				E48B7A812DAF6E1300EDDFEC /* Authentication */,
+			);
+			productName = TradeMind;
+			productReference = E415189E2DAF56D1007D3071 /* TradeMind.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E41518AF2DAF56D3007D3071 /* TradeMindTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E41518C72DAF56D4007D3071 /* Build configuration list for PBXNativeTarget "TradeMindTests" */;
+			buildPhases = (
+				E41518AC2DAF56D3007D3071 /* Sources */,
+				E41518AD2DAF56D3007D3071 /* Frameworks */,
+				E41518AE2DAF56D3007D3071 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E41518B22DAF56D3007D3071 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E41518B32DAF56D3007D3071 /* TradeMindTests */,
+			);
+			name = TradeMindTests;
+			packageProductDependencies = (
+			);
+			productName = TradeMindTests;
+			productReference = E41518B02DAF56D3007D3071 /* TradeMindTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E41518B92DAF56D3007D3071 /* TradeMindUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E41518CA2DAF56D4007D3071 /* Build configuration list for PBXNativeTarget "TradeMindUITests" */;
+			buildPhases = (
+				E41518B62DAF56D3007D3071 /* Sources */,
+				E41518B72DAF56D3007D3071 /* Frameworks */,
+				E41518B82DAF56D3007D3071 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E41518BC2DAF56D3007D3071 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E41518BD2DAF56D3007D3071 /* TradeMindUITests */,
+				E41518D52DAF5868007D3071 /* Neu */,
+			);
+			name = TradeMindUITests;
+			packageProductDependencies = (
+			);
+			productName = TradeMindUITests;
+			productReference = E41518BA2DAF56D3007D3071 /* TradeMindUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E41518962DAF56D1007D3071 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					E415189D2DAF56D1007D3071 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					E41518AF2DAF56D3007D3071 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = E415189D2DAF56D1007D3071;
+					};
+					E41518B92DAF56D3007D3071 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = E415189D2DAF56D1007D3071;
+					};
+				};
+			};
+			buildConfigurationList = E41518992DAF56D1007D3071 /* Build configuration list for PBXProject "TradeMind" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E41518952DAF56D1007D3071;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E415189F2DAF56D1007D3071 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E415189D2DAF56D1007D3071 /* TradeMind */,
+				E41518AF2DAF56D3007D3071 /* TradeMindTests */,
+				E41518B92DAF56D3007D3071 /* TradeMindUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E415189C2DAF56D1007D3071 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E41518AE2DAF56D3007D3071 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E41518B82DAF56D3007D3071 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E415189A2DAF56D1007D3071 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E41518AC2DAF56D3007D3071 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E41518B62DAF56D3007D3071 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E41518B22DAF56D3007D3071 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E415189D2DAF56D1007D3071 /* TradeMind */;
+			targetProxy = E41518B12DAF56D3007D3071 /* PBXContainerItemProxy */;
+		};
+		E41518BC2DAF56D3007D3071 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E415189D2DAF56D1007D3071 /* TradeMind */;
+			targetProxy = E41518BB2DAF56D3007D3071 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E41518C22DAF56D4007D3071 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E41518C32DAF56D4007D3071 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E41518C52DAF56D4007D3071 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TradeMind/Preview Content\"";
+				DEVELOPMENT_TEAM = BQH36CFX55;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hexcreators.TradeMind;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E41518C62DAF56D4007D3071 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TradeMind/Preview Content\"";
+				DEVELOPMENT_TEAM = BQH36CFX55;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hexcreators.TradeMind;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E41518C82DAF56D4007D3071 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BQH36CFX55;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hexcreators.TradeMindTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TradeMind.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TradeMind";
+			};
+			name = Debug;
+		};
+		E41518C92DAF56D4007D3071 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BQH36CFX55;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hexcreators.TradeMindTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TradeMind.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TradeMind";
+			};
+			name = Release;
+		};
+		E41518CB2DAF56D4007D3071 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BQH36CFX55;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hexcreators.TradeMindUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TradeMind;
+			};
+			name = Debug;
+		};
+		E41518CC2DAF56D4007D3071 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BQH36CFX55;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hexcreators.TradeMindUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TradeMind;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E41518992DAF56D1007D3071 /* Build configuration list for PBXProject "TradeMind" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E41518C22DAF56D4007D3071 /* Debug */,
+				E41518C32DAF56D4007D3071 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E41518C42DAF56D4007D3071 /* Build configuration list for PBXNativeTarget "TradeMind" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E41518C52DAF56D4007D3071 /* Debug */,
+				E41518C62DAF56D4007D3071 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E41518C72DAF56D4007D3071 /* Build configuration list for PBXNativeTarget "TradeMindTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E41518C82DAF56D4007D3071 /* Debug */,
+				E41518C92DAF56D4007D3071 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E41518CA2DAF56D4007D3071 /* Build configuration list for PBXNativeTarget "TradeMindUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E41518CB2DAF56D4007D3071 /* Debug */,
+				E41518CC2DAF56D4007D3071 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E41519092DAF590D007D3071 /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Core;
+		};
+		E415190B2DAF5912007D3071 /* NavigationManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NavigationManager;
+		};
+		E415190D2DAF5916007D3071 /* NetworkManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkManager;
+		};
+		E48B7A4C2DAF6AB600EDDFEC /* Shared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Shared;
+		};
+		E48B7A812DAF6E1300EDDFEC /* Authentication */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Authentication;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E41518962DAF56D1007D3071 /* Project object */;
+}
