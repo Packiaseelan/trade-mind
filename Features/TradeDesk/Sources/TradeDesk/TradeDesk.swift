@@ -1,6 +1,9 @@
 import Core
-import TradeDeskMapper
 import Shared
+import TradeDeskData
+import TradeDeskDomain
+import TradeDeskMapper
+import TradeDeskPresentation
 
 /// A class representing the Characters module within the application.
 /// This class is responsible for registering services related to character functionalities,
@@ -17,5 +20,24 @@ public class TradeDeskModule: Module {
     /// related to character functionalities, ensuring they are available for use throughout the application.
     public func registerServices() {
         TradeDeskMapperModule().registerServices()
+        
+        registerTradeDeskService()
+    }
+}
+
+extension TradeDeskModule {
+    
+    /// Registers the market data list service.
+    /// This private method sets up the service responsible for managing the asset list,
+    /// including its view model, use case, and repository.
+    private func registerTradeDeskService() {
+        DIContainer.container.register(TradeDeskViewModel.self) { resolver in
+            let network = resolver.resolve(NetworkManagerProtocol.self, name: ModuleIdentifier.network)
+            let service = MarketDataService(networkManager: network!)
+            let repository = MarketDataRepository(service: service)
+            let usecase = TradeDeskUseCase(repository: repository)
+            
+            return TradeDeskViewModel(usecase: usecase)
+        }
     }
 }

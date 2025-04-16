@@ -13,7 +13,7 @@ public final class TradeDeskNavigationManager: @preconcurrency ModuleNavigationM
     public func view(for destination: TradeDeskModuleIdentifier.Screen, arguments: [String: AnyHashable]) -> AnyView {
         switch destination {
         case .landing:
-            return AnyView(Text("Landing view"))
+            return AnyView(LandingView())
  
         }
     }

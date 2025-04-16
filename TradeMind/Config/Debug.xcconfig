@@ -1,9 +1,2 @@
-//
-//  Debug.xcconfig
-//  TradeMind
-//
-//  Created by Packiaseelan on 16/04/25.
-//
-
-// Configuration settings file format documentation can be found at:
-// https://help.apple.com/xcode/#/dev745c5c974
+BASE_URL_PROTOCOL = https
+BASE_URL_HOST = api.binance.com/api/v3

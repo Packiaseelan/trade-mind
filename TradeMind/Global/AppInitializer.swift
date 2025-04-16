@@ -3,6 +3,7 @@ import Shared
 import NetworkManager
 import NavigationManager
 import Authentication
+import TradeDesk
 
 /// A class responsible for initializing the application.
 /// This class sets up necessary services and registers dependencies for various modules,
@@ -44,6 +45,10 @@ class AppInitializer {
             CoreInitializationParams(
                 identifier: ModuleIdentifier.authentication,
                 module: AuthenticationModule()
+            ),
+            CoreInitializationParams(
+                identifier: ModuleIdentifier.tradeDesk,
+                module: TradeDeskModule()
             )
         ]
         
