@@ -12,6 +12,12 @@ struct TradeDeskView: View {
     var body: some View {
         NavigationView {
             VStack {
+                TextField("Search by symbol...", text: $viewModel.searchText)
+                    .padding(10)
+                    .background(Color(.systemGray6))
+                    .cornerRadius(10)
+                    .padding(.horizontal)
+                
                 if viewModel.isLoading {
                     ProgressView("Loading market data...")
                 } else if let error = viewModel.errorMessage {
@@ -20,7 +26,7 @@ struct TradeDeskView: View {
                 } else {
                     ScrollView {
                         LazyVStack {
-                            ForEach(viewModel.assets, id: \.id) { asset in
+                            ForEach(viewModel.filteredAssets, id: \.id) { asset in
                                 AssetRowView(asset: asset)
                             }
                         }

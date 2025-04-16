@@ -46,3 +46,72 @@ public struct AssetDomainModel: BaseDomainModel, Codable, Identifiable {
         self.count = count
     }
 }
+
+extension AssetDomainModel: WebSocketDecodable {
+    public static func fromWebSocketString(_ string: String) -> AssetDomainModel? {
+        guard let data = string.data(using: .utf8) else { return nil }
+
+        struct CombinedStreamWrapper: Decodable {
+            let stream: String
+            let data: TickerDTO
+        }
+
+        struct TickerDTO: Decodable {
+            let e: String
+            let E: Int
+            let s: String
+            let p: String
+            let P: String
+            let w: String
+            let x: String
+            let c: String
+            let Q: String
+            let b: String
+            let B: String
+            let a: String
+            let A: String
+            let o: String
+            let h: String
+            let l: String
+            let v: String
+            let q: String
+            let O: Int
+            let C: Int
+            let F: Int
+            let L: Int
+            let n: Int
+        }
+
+        do {
+            let wrapper = try JSONDecoder().decode(CombinedStreamWrapper.self, from: data)
+            let dto = wrapper.data
+
+            return AssetDomainModel(
+                symbol: dto.s,
+                priceChange: dto.p,
+                priceChangePercent: dto.P,
+                weightedAvgPrice: dto.w,
+                prevClosePrice: dto.x,
+                lastPrice: dto.c,
+                lastQty: dto.Q,
+                bidPrice: dto.b,
+                bidQty: dto.B,
+                askPrice: dto.a,
+                askQty: dto.A,
+                openPrice: dto.o,
+                highPrice: dto.h,
+                lowPrice: dto.l,
+                volume: dto.v,
+                quoteVolume: dto.q,
+                openTime: dto.O,
+                closeTime: dto.C,
+                firstID: dto.F,
+                lastID: dto.L,
+                count: dto.n
+            )
+        } catch {
+            print("❌ Failed to decode AssetDomainModel: \(error)")
+            return nil
+        }
+    }
+}

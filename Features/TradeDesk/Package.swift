@@ -54,7 +54,7 @@ let package = Package(
         
         .target(
             name: "TradeDeskUiKit",
-            dependencies: ["Shared" ,"Core"],
+            dependencies: ["Shared" ,"Core", "TradeDeskDomain"],
             path: "Sources/UiKit"
         ),
     ]
