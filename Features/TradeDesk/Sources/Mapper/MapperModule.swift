@@ -1,8 +1,9 @@
-//
-//  File.swift
-//  TradeDesk
-//
-//  Created by Packiaseelan on 16/04/25.
-//
-
+import Core
+import Shared
 import Foundation
+
+public class TradeDeskMapperModule: Module {
+    public init() {}
+    
+    public func registerServices() { }
+}
