@@ -1,6 +1,7 @@
 import Core
 import NavigationManager
 import Authentication
+import TradeDesk
 import Shared
 
 /// A class responsible for providing a configured navigation manager registry.
@@ -19,6 +20,10 @@ public class NavigationRegistryProvider {
         // Create and register the navigation manager for the Authentication module.
         let authNavManager = AuthenticationNavigationManager()
         registry.register(manager: authNavManager, forKey: ModuleIdentifier.authentication)
+        
+        // Create and register the navigation manager for the TradeDesk module.
+        let tradeDeskNavManager = TradeDeskNavigationManager()
+        registry.register(manager: tradeDeskNavManager, forKey: ModuleIdentifier.tradeDesk)
         
         // Return the configured registry.
         return registry

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E40EF99D2DAF80960033D3A0 /* TradeDesk in Frameworks */ = {isa = PBXBuildFile; productRef = E40EF99C2DAF80960033D3A0 /* TradeDesk */; };
 		E415190A2DAF590D007D3071 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = E41519092DAF590D007D3071 /* Core */; };
 		E415190C2DAF5912007D3071 /* NavigationManager in Frameworks */ = {isa = PBXBuildFile; productRef = E415190B2DAF5912007D3071 /* NavigationManager */; };
 		E415190E2DAF5916007D3071 /* NetworkManager in Frameworks */ = {isa = PBXBuildFile; productRef = E415190D2DAF5916007D3071 /* NetworkManager */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E40EF99B2DAF7D930033D3A0 /* TradeDesk */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TradeDesk; sourceTree = "<group>"; };
 		E415189E2DAF56D1007D3071 /* TradeMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradeMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E41518B02DAF56D3007D3071 /* TradeMindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TradeMindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E41518BA2DAF56D3007D3071 /* TradeMindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TradeMindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E40EF99D2DAF80960033D3A0 /* TradeDesk in Frameworks */,
 				E415190C2DAF5912007D3071 /* NavigationManager in Frameworks */,
 				E48B7A4D2DAF6AB600EDDFEC /* Shared in Frameworks */,
 				E48B7A822DAF6E1300EDDFEC /* Authentication in Frameworks */,
@@ -140,6 +143,7 @@
 		E48B7A4B2DAF6A9E00EDDFEC /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				E40EF99B2DAF7D930033D3A0 /* TradeDesk */,
 				E48B7A802DAF6E0000EDDFEC /* Authentication */,
 				E48B7A4A2DAF6A9E00EDDFEC /* Shared */,
 			);
@@ -171,6 +175,7 @@
 				E415190D2DAF5916007D3071 /* NetworkManager */,
 				E48B7A4C2DAF6AB600EDDFEC /* Shared */,
 				E48B7A812DAF6E1300EDDFEC /* Authentication */,
+				E40EF99C2DAF80960033D3A0 /* TradeDesk */,
 			);
 			productName = TradeMind;
 			productReference = E415189E2DAF56D1007D3071 /* TradeMind.app */;
@@ -620,6 +625,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E40EF99C2DAF80960033D3A0 /* TradeDesk */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TradeDesk;
+		};
 		E41519092DAF590D007D3071 /* Core */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Core;

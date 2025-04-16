@@ -17,7 +17,7 @@ public class ModuleIdentifier {
     public static let tradeHistory = "tradeHistory";
     public static let notifications = "notifications";
     public static let settings = "settings";
-    public static let dashboard = "dashboard";
+    public static let tradeDesk = "tradeDesk";
     public static let backendSync = "backendSync";
 }
 
@@ -26,6 +26,16 @@ public class ModuleIdentifier {
 public class AuthenticationModuleIdentifier {
     public enum Screen: Hashable {
         case login
+    }
+    
+    public enum Mapper {
+        public static let login = "login"
+    }
+}
+
+public class TradeDeskModuleIdentifier {
+    public enum Screen: Hashable {
+        case landing
     }
     
     public enum Mapper {

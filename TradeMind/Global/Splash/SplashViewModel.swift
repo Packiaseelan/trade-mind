@@ -14,8 +14,8 @@ class SplashViewModel: ObservableObject {
     private func startSplashTimer() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             let destination = AnyDestination(
-                module: ModuleIdentifier.authentication,
-                screen: AuthenticationModuleIdentifier.Screen.login
+                module: ModuleIdentifier.tradeDesk,
+                screen: TradeDeskModuleIdentifier.Screen.landing
             )
             self.navigation.replace(destination: destination)
         }
