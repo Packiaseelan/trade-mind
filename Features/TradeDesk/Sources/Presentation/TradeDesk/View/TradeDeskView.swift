@@ -24,14 +24,22 @@ struct TradeDeskView: View {
                     Text("Error: \(error)")
                         .foregroundColor(.red)
                 } else {
-                    ScrollView {
-                        LazyVStack {
-                            ForEach(viewModel.filteredAssets, id: \.id) { asset in
-                                AssetRowView(asset: asset)
+                    if !viewModel.filteredAssets.isEmpty {
+                        ScrollView {
+                            LazyVStack {
+                                ForEach(viewModel.filteredAssets, id: \.id) { asset in
+                                    AssetRowView(asset: asset)
+                                }
                             }
                         }
+                        .refreshable{ viewModel.onPullToRefresh() }
+                    } else {
+                        Text("No matching assets found...")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
                     }
                 }
+                Spacer()
             }
             .navigationTitle("TradeDesk")
             .onAppear(perform: viewModel.onAppear)

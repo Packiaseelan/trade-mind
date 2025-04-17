@@ -29,6 +29,20 @@ public class TradeDeskViewModel: BaseViewModel {
     }
     
     public func onAppear() {
+        fetchAssets()
+    }
+    
+    public func onDisappear() {
+        self.webSocketManagers.forEach { $0.disconnect() }
+        self.webSocketManagers.removeAll()
+    }
+    
+    // Handle manual pull to refresh
+    public func onPullToRefresh() {
+        fetchAssets()
+    }
+    
+    private func fetchAssets() {
         self.isLoading = true
         self.usecase.fetchTopAssets(limit: 3065)
             .receive(on: DispatchQueue.main)
@@ -45,11 +59,6 @@ public class TradeDeskViewModel: BaseViewModel {
                 }
             })
             .store(in: &self.cancellables)
-    }
-    
-    public func onDisappear() {
-        self.webSocketManagers.forEach { $0.disconnect() }
-        self.webSocketManagers.removeAll()
     }
     
     private func filterAssets(with text: String) {
