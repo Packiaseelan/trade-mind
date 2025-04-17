@@ -22,6 +22,7 @@ public class TradeDeskModule: Module {
         TradeDeskMapperModule().registerServices()
         
         registerTradeDeskService()
+        registerAssetDetailsService()
     }
 }
 
@@ -38,6 +39,20 @@ extension TradeDeskModule {
             let usecase = TradeDeskUseCase(repository: repository)
             
             return TradeDeskViewModel(usecase: usecase)
+        }
+    }
+    
+    /// Registers the asset details service.
+    /// This private method sets up the service responsible for managing the asset details,
+    /// including its view model, use case, and repository.
+    private func registerAssetDetailsService() {
+        DIContainer.container.register(AssetDetailsViewModel.self) { resolver in
+            let network = resolver.resolve(NetworkManagerProtocol.self, name: ModuleIdentifier.network)
+            let service = MarketDataService(networkManager: network!)
+            let repository = MarketDataRepository(service: service)
+            let usecase = TradeDeskUseCase(repository: repository)
+            
+            return AssetDetailsViewModel()
         }
     }
 }

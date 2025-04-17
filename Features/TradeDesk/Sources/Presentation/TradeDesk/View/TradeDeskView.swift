@@ -29,6 +29,9 @@ struct TradeDeskView: View {
                             LazyVStack {
                                 ForEach(viewModel.filteredAssets, id: \.id) { asset in
                                     AssetRowView(asset: asset)
+                                        .onTapGesture {
+                                            viewModel.onSelectAsset(asset)
+                                        }
                                 }
                             }
                         }

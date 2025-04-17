@@ -1,7 +1,7 @@
 import Core
 import Foundation
 
-public struct AssetDomainModel: BaseDomainModel, Codable, Identifiable {
+public struct AssetDomainModel: BaseDomainModel, Codable, Identifiable, Hashable {
     public var id: String
     
     public let symbol, priceChange, priceChangePercent, weightedAvgPrice: String

@@ -14,6 +14,10 @@ public final class TradeDeskNavigationManager: @preconcurrency ModuleNavigationM
         switch destination {
         case .landing:
             return AnyView(LandingView())
+            
+        case .assetDetails:
+            let viewModel = DIContainer.container.resolve(AssetDetailsViewModel.self)!
+            return AnyView(AssetDetailsView(viewModel: viewModel))
  
         }
     }

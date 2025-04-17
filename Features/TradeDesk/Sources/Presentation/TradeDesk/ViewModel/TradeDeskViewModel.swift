@@ -1,8 +1,10 @@
 import Core
 import Combine
+import Shared
 import Foundation
 import TradeDeskDomain
 import NetworkManager
+import NavigationManager
 
 public class TradeDeskViewModel: BaseViewModel {
     private let usecase: TradeDeskUseCaseProtocol
@@ -27,7 +29,9 @@ public class TradeDeskViewModel: BaseViewModel {
             }
             .store(in: &cancellables)
     }
-    
+}
+
+extension TradeDeskViewModel {
     public func onAppear() {
         fetchAssets()
     }
@@ -37,11 +41,21 @@ public class TradeDeskViewModel: BaseViewModel {
         self.webSocketManagers.removeAll()
     }
     
-    // Handle manual pull to refresh
     public func onPullToRefresh() {
         fetchAssets()
     }
     
+    public func onSelectAsset(_ asset: AssetDomainModel) {
+        let destination = AnyDestination(
+            module: ModuleIdentifier.tradeDesk,
+            screen: TradeDeskModuleIdentifier.Screen.assetDetails,
+            arguments: ["asset" : asset]
+        )
+        NavigationManager.shared.push(destination: destination)
+    }
+}
+
+extension TradeDeskViewModel {
     private func fetchAssets() {
         self.isLoading = true
         self.usecase.fetchTopAssets(limit: 3065)

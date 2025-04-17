@@ -36,6 +36,7 @@ public class AuthenticationModuleIdentifier {
 public class TradeDeskModuleIdentifier {
     public enum Screen: Hashable {
         case landing
+        case assetDetails
     }
     
     public enum Mapper {
