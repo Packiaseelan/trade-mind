@@ -7,6 +7,7 @@ public class TradeDeskMapperModule: Module {
     
     public func registerServices() {
         registerMarketDataMapperService()
+        registerCandleDataMapperService()
     }
 }
 
@@ -15,7 +16,15 @@ extension TradeDeskMapperModule {
         DIContainer.container.register(
             BaseDomainMapper.self,
             name: TradeDeskModuleIdentifier.Mapper.marketData,
-            factory: { _ in StudentDomainMapper() }
+            factory: { _ in AssetDomainMapper() }
+        )
+    }
+    
+    private func registerCandleDataMapperService() {
+        DIContainer.container.register(
+            BaseDomainMapper.self,
+            name: TradeDeskModuleIdentifier.Mapper.candleData,
+            factory: { _ in CandleDomainMapper() }
         )
     }
 }

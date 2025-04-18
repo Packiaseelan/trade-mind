@@ -2,7 +2,7 @@ import Core
 import TradeDeskDomain
 import TradeDeskData
 
-public class StudentDomainMapper: BaseDomainMapper {
+public class AssetDomainMapper: BaseDomainMapper {
     public init() {}
     
     public func fromDataModelToDomainModel(data: any BaseDataModel) -> any BaseDomainModel {

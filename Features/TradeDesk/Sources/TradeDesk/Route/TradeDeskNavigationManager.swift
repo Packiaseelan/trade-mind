@@ -17,7 +17,7 @@ public final class TradeDeskNavigationManager: @preconcurrency ModuleNavigationM
             
         case .assetDetails:
             let viewModel = DIContainer.container.resolve(AssetDetailsViewModel.self)!
-            return AnyView(AssetDetailsView(viewModel: viewModel))
+            return AnyView(AssetDetailsView(viewModel: viewModel, arguments: arguments))
  
         }
     }

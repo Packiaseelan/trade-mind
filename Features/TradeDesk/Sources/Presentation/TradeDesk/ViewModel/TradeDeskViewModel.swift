@@ -32,6 +32,8 @@ public class TradeDeskViewModel: BaseViewModel {
 }
 
 extension TradeDeskViewModel {
+    public func onInit(arguments: [String: Any]) { }
+    
     public func onAppear() {
         fetchAssets()
     }

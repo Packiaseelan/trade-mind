@@ -41,5 +41,6 @@ public class TradeDeskModuleIdentifier {
     
     public enum Mapper {
         public static let marketData = "marketData"
+        public static let candleData = "candleData"
     }
 }

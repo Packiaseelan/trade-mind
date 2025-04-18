@@ -19,4 +19,8 @@ public protocol BaseViewModel: ObservableObject {
     /// A method called when the view disappears.
     /// This method can be used to perform cleanup tasks or save state.
     func onDisappear()
+    
+    /// A method called when the view initialise.
+    /// This method can be used to perform initialise the arguments to viewmodel.
+    func onInit(arguments: [String: Any])
 }

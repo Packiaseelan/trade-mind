@@ -48,11 +48,11 @@ extension TradeDeskModule {
     private func registerAssetDetailsService() {
         DIContainer.container.register(AssetDetailsViewModel.self) { resolver in
             let network = resolver.resolve(NetworkManagerProtocol.self, name: ModuleIdentifier.network)
-            let service = MarketDataService(networkManager: network!)
-            let repository = MarketDataRepository(service: service)
-            let usecase = TradeDeskUseCase(repository: repository)
+            let service = CandleDataService(networkManager: network!)
+            let repository = CandleDataRepository(service: service)
+            let usecase = AssetDetailsUseCase(repository: repository)
             
-            return AssetDetailsViewModel()
+            return AssetDetailsViewModel(usecase: usecase)
         }
     }
 }

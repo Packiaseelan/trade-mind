@@ -10,13 +10,13 @@ public protocol BaseDomainMapper {
 /// A protocol that represents a base data model.
 /// This protocol serves as a marker for data models, which are typically used to represent
 /// data structures received from external sources such as APIs or databases.
-public protocol BaseDataModel {
+public protocol BaseDataModel: Codable {
     // Define properties or methods common to all data models here, if needed.
 }
 
 /// A protocol that represents a base domain model.
 /// This protocol serves as a marker for domain models, which are typically used to represent
 /// business logic entities within the application.
-public protocol BaseDomainModel {
+public protocol BaseDomainModel: Codable {
     // Define properties or methods common to all domain models here, if needed.
 }
