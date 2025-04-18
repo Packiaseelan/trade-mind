@@ -1,24 +1,38 @@
 import Core
 import Charts
 import SwiftUI
+import TradeDeskDomain
+import TradeDeskUiKit
 
 public struct AssetDetailsView: BaseView {
     @StateObject public var viewModel: AssetDetailsViewModel
-    
+    private let arguments: [String: Any]
+
     public init(viewModel: AssetDetailsViewModel, arguments: [String: Any]) {
-        viewModel.onInit(arguments: arguments)
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.arguments = arguments
     }
-    
+
     public var body: some View {
         VStack {
-            headerSection
+            if let asset = viewModel.asset {
+                headerSection(asset: asset)
+            }
+
             if viewModel.isLoading {
                 ProgressView("Loading chart...")
             } else if let error = viewModel.errorMessage {
                 Text("Error: \(error)")
                     .foregroundColor(.red)
             } else {
+                Picker("Chart Type", selection: $viewModel.selectedChartType) {
+                    ForEach(ChartType.allCases, id: \.self) { type in
+                        Text(type.rawValue).tag(type)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .padding(.horizontal)
+                
                 Picker("Interval", selection: $viewModel.selectedInterval) {
                     ForEach(KlineInterval.allCases) { interval in
                         Text(interval.label).tag(interval)
@@ -27,70 +41,61 @@ public struct AssetDetailsView: BaseView {
                 .pickerStyle(.segmented)
                 .padding(.horizontal)
                 
-                Chart(viewModel.prices) {
-                    LineMark(
-                        x: .value("Time", $0.time),
-                        y: .value("Close", $0.close)
-                    )
-                    .interpolationMethod(.monotone)
-                    .foregroundStyle(.blue)
+                switch viewModel.selectedChartType {
+                case .candlestick:
+                    CandleChart(smaPrices: viewModel.smaPrices, prices: viewModel.prices)
+                case .line:
+                    LineChart(prices: viewModel.prices)
                 }
-                .frame(height: 200)
             }
-            statSection
+
+            if let asset = viewModel.asset {
+                statSection(asset: asset)
+            }
         }
-        .navigationTitle(viewModel.asset!.symbol)
-        .onAppear(perform: viewModel.onAppear)
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(false)
+        .navigationTitle(viewModel.asset?.symbol ?? "Asset Details")
+        .onAppear {
+            viewModel.onInit(arguments: arguments)
+            viewModel.onAppear()
+        }
         .onDisappear(perform: viewModel.onDisappear)
     }
-}
 
-extension AssetDetailsView {
-    private var lastPriceText: String {
-        let lastPrice = Double(viewModel.asset!.lastPrice) ?? 0.0
-        return String(format: "%.2f", lastPrice)
-    }
-    
-    private var priceChangeColor: Color {
-        let priceChange = Double(viewModel.asset!.priceChangePercent) ?? 0.0
-        return priceChange >= 0 ? .green : .red
-    }
-    
-    private var priceChangePercentText: String {
-        let priceChangePercent = Double(viewModel.asset!.priceChangePercent) ?? 0.0
-        return String(format: "%.2f", priceChangePercent)
-    }
-    
-    private var headerSection: some View {
-        VStack(spacing: 4) {
-            Text(viewModel.asset!.symbol)
+    private func headerSection(asset: AssetDomainModel) -> some View {
+        let lastPrice = Double(asset.lastPrice) ?? 0.0
+        let priceChangePercent = Double(asset.priceChangePercent) ?? 0.0
+        let priceColor: Color = priceChangePercent >= 0 ? .green : .red
+
+        return VStack(spacing: 4) {
+            Text(asset.symbol)
                 .font(.title2)
                 .bold()
-            
-            Text(lastPriceText)
+
+            Text(String(format: "%.2f", lastPrice))
                 .font(.title)
-                .foregroundColor(priceChangeColor)
-            
-            Text("\(priceChangePercentText)%")
+                .foregroundColor(priceColor)
+
+            Text(String(format: "%.2f%%", priceChangePercent))
                 .font(.subheadline)
-                .foregroundColor(priceChangeColor)
+                .foregroundColor(priceColor)
         }
     }
-    
-    
-    private var statSection: some View {
+
+    private func statSection(asset: AssetDomainModel) -> some View {
         VStack(spacing: 8) {
             HStack {
-                statCell("High", Double(viewModel.asset!.highPrice) ?? 0.0)
-                statCell("Low", Double(viewModel.asset!.lowPrice) ?? 0.0)
+                statCell("High", Double(asset.highPrice) ?? 0.0)
+                statCell("Low", Double(asset.lowPrice) ?? 0.0)
             }
             HStack {
-                statCell("Open", Double(viewModel.asset!.openPrice) ?? 0.0)
-                statCell("Volume", Double(viewModel.asset!.volume) ?? 0.0)
+                statCell("Open", Double(asset.openPrice) ?? 0.0)
+                statCell("Volume", Double(asset.volume) ?? 0.0)
             }
         }
     }
-    
+
     private func statCell(_ title: String, _ value: Double) -> some View {
         VStack {
             Text(title)

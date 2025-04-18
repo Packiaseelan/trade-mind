@@ -10,9 +10,11 @@ public class AssetDetailsViewModel: BaseViewModel {
     @Published public var isLoading: Bool = false
     @Published public var errorMessage: String? = nil
     @Published public var prices: [CandleData] = []
+    @Published public var smaPrices: [MovingAverageData] = []
     @Published public var selectedInterval: KlineInterval = .fiveMinutes {
         didSet { fetchCandleData() }
     }
+    @Published var selectedChartType: ChartType = .candlestick
     
     public var asset: AssetDomainModel? = nil
     
@@ -32,12 +34,8 @@ extension AssetDetailsViewModel {
         fetchCandleData()
     }
     
-    public func onDisappear() {
-        
-    }
-}
-
-extension AssetDetailsViewModel {
+    public func onDisappear() {}
+    
     private func fetchCandleData() {
         guard let asset = self.asset else { return }
         self.isLoading = true
@@ -57,10 +55,26 @@ extension AssetDetailsViewModel {
                 switch result {
                 case .success(let prices):
                     self.prices = prices
+                    self.calculateSMA(period: 20)
                 case .failure(let error):
                     self.errorMessage = error.localizedDescription
                 }
             })
             .store(in: &self.cancellables)
+    }
+    
+    private func calculateSMA(period: Int) {
+        guard prices.count >= period else {
+            self.smaPrices = []
+            return
+        }
+
+        var sma: [MovingAverageData] = []
+        for i in period..<prices.count {
+            let slice = prices[i - period..<i]
+            let average = slice.map { $0.close }.reduce(0, +) / Double(period)
+            sma.append(MovingAverageData(time: prices[i].time, value: average))
+        }
+        self.smaPrices = sma
     }
 }
